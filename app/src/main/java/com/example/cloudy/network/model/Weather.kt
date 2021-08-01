@@ -1,6 +1,6 @@
-package com.example.cloudy
+package com.example.cloudy.network.model
 
-data class weather(
+data class Weather(
     val location: String,
     val stateAbbr: String,
     val temperature: String

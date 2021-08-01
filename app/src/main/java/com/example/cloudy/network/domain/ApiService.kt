@@ -1,12 +1,12 @@
-package com.example.cloudy.Network.Domain
+package com.example.cloudy.network.domain
 
-import com.example.cloudy.Network.Pojo.Location
-import com.example.cloudy.Network.Pojo.LocationSearch
+import com.example.cloudy.network.pojo.Location
+import com.example.cloudy.network.pojo.LocationSearch
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
 
-interface AdapterRepo {
+interface ApiService {
     @GET("/api/location/search/")
     suspend fun getLocation(@Query("query") cityName: String): LocationSearch
 
