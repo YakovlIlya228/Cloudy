@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="90dp"
+    android:layout_height="110dp"
+    android:background="@android:color/transparent"
+    tools:background="@drawable/blue_gradient">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/weekdayTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:letterSpacing="-0.01"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        app:fontFamily="@font/montserrat_semi_bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Tuesday" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/forecastDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:letterSpacing="-0.01"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        app:fontFamily="@font/montserrat_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weekdayTv"
+        tools:text="18 Aug" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/forecastTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/weatherIcon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/weatherIcon"
+        app:layout_constraintTop_toTopOf="@+id/weatherIcon"
+        tools:text="+18" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/weatherIcon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/forecastDate"
+        app:layout_constraintVertical_bias="0.35"
+        tools:src="@drawable/ic_c" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/forecastDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:letterSpacing="-0.02"
+        android:textColor="@android:color/white"
+        app:fontFamily="@font/montserrat_regular"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weatherIcon"
+        tools:text="Sunny" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

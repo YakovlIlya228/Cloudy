@@ -1,7 +1,7 @@
 package com.example.cloudy
 
 import android.app.Application
-import com.example.cloudy.di.appModule
+import com.example.cloudy.di.appModules
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -13,7 +13,7 @@ class CloudyApp : Application() {
         startKoin {
             androidLogger()
             androidContext(this@CloudyApp)
-            modules(appModule)
+            modules(appModules)
         }
     }
 

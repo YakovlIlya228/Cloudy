@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.cloudy.R
-import com.example.cloudy.network.pojo.Location
-import com.example.cloudy.network.pojo.Weather
+import com.example.cloudy.source.api.model.Location
+import com.example.cloudy.source.api.model.Weather
 import kotlinx.android.synthetic.main.fragment_main_weather.*
 
 

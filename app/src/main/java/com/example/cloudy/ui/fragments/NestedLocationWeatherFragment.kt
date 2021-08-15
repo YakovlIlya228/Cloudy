@@ -4,13 +4,21 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.annotation.DrawableRes
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.cloudy.R
-import com.example.cloudy.network.pojo.Location
+import com.example.cloudy.source.api.model.Location
+import com.example.cloudy.ui.adapters.DailyForecastAdapter
+import com.example.cloudy.ui.viewmodels.LocationWeatherViewModel
+import com.example.cloudy.utils.Extensions.parseIcon
 import kotlinx.android.synthetic.main.fragment_location_weather_nested.*
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class NestedLocationWeatherFragment(private val location: Location) : Fragment() {
+
+    private val locationWeatherViewModel: LocationWeatherViewModel by viewModel()
+    private val dailyForecastAdapter by lazy { DailyForecastAdapter() }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -24,6 +32,19 @@ class NestedLocationWeatherFragment(private val location: Location) : Fragment()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         location.bindLocation()
+        with(dailyWeatherRv) {
+            layoutManager =
+                LinearLayoutManager(requireContext(), RecyclerView.HORIZONTAL, false)
+            adapter = dailyForecastAdapter
+        }
+        with(locationWeatherViewModel) {
+            dailyWeatherForecast.observe(viewLifecycleOwner) {
+                dailyForecastAdapter.update(it.toList())
+            }
+
+            fetchDailyForecast("moscow", "ru")
+        }
+
     }
 
     private fun Location.bindLocation() {
@@ -33,16 +54,4 @@ class NestedLocationWeatherFragment(private val location: Location) : Fragment()
         weather.code.parseIcon()?.let { weatherIcon.setImageResource(it) }
     }
 
-    @DrawableRes
-    fun Int.parseIcon(): Int? = when (this) {
-        801, 802 -> R.drawable.ic_lc
-        621, 622, 623 -> R.drawable.ic_sn
-        511, 522, 520 -> R.drawable.ic_hr
-        500, 501 -> R.drawable.ic_lr
-        230, 231, 232, 233 -> R.drawable.ic_t
-        800 -> R.drawable.ic_c
-        803, 804 -> R.drawable.ic_hc
-        611, 612 -> R.drawable.ic_sl
-        else -> null
-    }
 }
