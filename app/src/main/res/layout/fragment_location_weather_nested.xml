@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/blue_gradient"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/currentLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:textColor="@android:color/white"
+            android:textSize="46sp"
+            app:fontFamily="@font/montserrat_medium"
+            app:layout_constraintBottom_toTopOf="@+id/weatherIcon"
+            app:layout_constraintEnd_toEndOf="@+id/currentTemp"
+            app:layout_constraintHorizontal_bias="0.9"
+            app:layout_constraintStart_toStartOf="@+id/weatherIcon"
+            tools:text="Moscow" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/currentTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginBottom="32dp"
+            android:textColor="@android:color/white"
+            android:textSize="66sp"
+            app:fontFamily="@font/montserrat_medium"
+            app:layout_constraintBottom_toBottomOf="@id/weatherIcon"
+            app:layout_constraintStart_toEndOf="@id/weatherIcon"
+            app:layout_constraintTop_toTopOf="@+id/weatherIcon"
+            tools:text="+16" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/weatherDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:letterSpacing="-0.02"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            app:fontFamily="@font/montserrat_medium"
+            app:layout_constraintStart_toStartOf="@id/weatherIcon"
+            app:layout_constraintTop_toBottomOf="@id/weatherIcon"
+            tools:text="Few clouds" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/weatherIcon"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/ic_s"
+            app:layout_constraintBottom_toTopOf="@+id/dailyWeatherRv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.35" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/dailyWeatherRv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.7" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
+

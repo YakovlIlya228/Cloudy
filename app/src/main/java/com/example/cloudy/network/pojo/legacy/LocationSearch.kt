@@ -1,4 +1,4 @@
-package com.example.cloudy.network.pojo
+package com.example.cloudy.network.pojo.legacy
 
 import com.google.gson.annotations.SerializedName
 

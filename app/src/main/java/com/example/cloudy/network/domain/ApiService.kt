@@ -1,7 +1,7 @@
 package com.example.cloudy.network.domain
 
-import com.example.cloudy.network.pojo.Location
-import com.example.cloudy.network.pojo.LocationSearch
+import com.example.cloudy.network.pojo.legacy.Location
+import com.example.cloudy.network.pojo.legacy.LocationSearch
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
