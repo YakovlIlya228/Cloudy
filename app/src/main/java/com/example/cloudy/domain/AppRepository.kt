@@ -1,4 +1,4 @@
-package com.example.cloudy.domain.usecase
+package com.example.cloudy.domain
 
 import com.example.cloudy.source.api.model.Forecast
 import com.example.cloudy.source.api.model.Location

@@ -4,12 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cloudy.R
 import com.example.cloudy.source.api.model.Location
 import com.example.cloudy.ui.adapters.DailyForecastAdapter
+import com.example.cloudy.ui.adapters.diff_utils.ForecastDiffUtilCallback
 import com.example.cloudy.ui.viewmodels.LocationWeatherViewModel
 import com.example.cloudy.utils.Extensions.parseIcon
 import kotlinx.android.synthetic.main.fragment_location_weather_nested.*
@@ -39,10 +41,18 @@ class NestedLocationWeatherFragment(private val location: Location) : Fragment()
         }
         with(locationWeatherViewModel) {
             dailyWeatherForecast.observe(viewLifecycleOwner) {
-                dailyForecastAdapter.update(it.toList())
+                val diffUtilCallback =
+                    ForecastDiffUtilCallback(dailyForecastAdapter.getItems(), it.toList())
+                dailyForecastAdapter.submitList(it.toList(), diffUtilCallback)
             }
 
-            fetchDailyForecast("moscow", "ru")
+            fetchDailyForecast(location.cityName, location.countryCode) {
+                Toast.makeText(
+                    requireContext(),
+                    resources.getString(R.string.error),
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
         }
 
     }

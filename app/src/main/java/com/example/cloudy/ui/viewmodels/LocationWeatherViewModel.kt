@@ -15,6 +15,13 @@ class LocationWeatherViewModel(
     val currentLocationWeather by lazy { MutableLiveData<Location>() }
     val dailyWeatherForecast by lazy { MutableLiveData<Array<Forecast>>() }
 
+
+    override fun onCleared() {
+        super.onCleared()
+        getCurrentWeatherUseCase.unsubscribe()
+        getDailyForecastUseCase.unsubscribe()
+    }
+
     fun fetchCurrentWeather(
         city: String,
         countryCode: String
@@ -31,7 +38,8 @@ class LocationWeatherViewModel(
 
     fun fetchDailyForecast(
         city: String,
-        countryCode: String
+        countryCode: String,
+        onError: () -> Unit = {}
     ) {
         getDailyForecastUseCase.apply {
             this.city = city
@@ -39,6 +47,10 @@ class LocationWeatherViewModel(
         }.execute {
             onComplete {
                 dailyWeatherForecast.postValue(it)
+            }
+            onError {
+                println(it)
+                onError.invoke()
             }
         }
     }

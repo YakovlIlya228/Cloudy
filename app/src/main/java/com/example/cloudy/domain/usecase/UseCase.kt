@@ -32,8 +32,10 @@ abstract class UseCase<T> {
                     executeOnBackground()
                 }
                 mainHandler(result)
+            } catch (cancellationException: CancellationException) {
+                mainHandler(cancellationException)
             } catch (e: Exception) {
-                mainHandler.invoke("$e")
+                mainHandler.invoke("${e.printStackTrace()}")
             } finally {
                 mainHandler(State.ON_STOP)
             }

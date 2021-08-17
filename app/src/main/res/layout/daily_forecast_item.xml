@@ -2,8 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="90dp"
-    android:layout_height="110dp"
+    android:layout_width="100dp"
+    android:layout_height="140dp"
     android:background="@android:color/transparent"
     tools:background="@drawable/blue_gradient">
 
@@ -58,16 +58,23 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/forecastDescription"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_height="wrap_content"
         android:letterSpacing="-0.02"
+        android:breakStrategy="simple"
+        android:ellipsize="end"
+        android:lines="2"
+        android:maxLines="2"
+        android:textSize="12sp"
         android:textColor="@android:color/white"
         app:fontFamily="@font/montserrat_regular"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/weatherIcon"
-        tools:text="Sunny" />
+        tools:text="Thunderstorms" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

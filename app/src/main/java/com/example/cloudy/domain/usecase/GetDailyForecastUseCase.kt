@@ -1,5 +1,6 @@
 package com.example.cloudy.domain.usecase
 
+import com.example.cloudy.domain.AppRepository
 import com.example.cloudy.source.api.model.Forecast
 import kotlin.properties.Delegates
 

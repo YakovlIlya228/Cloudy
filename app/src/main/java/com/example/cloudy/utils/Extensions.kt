@@ -25,7 +25,8 @@ object Extensions {
             val weekdaySdf = SimpleDateFormat("EE", Locale.US)
             if (date != null) weekdaySdf.format(date) else null
         } catch (e: Exception) {
-            e.toString()
+            e.printStackTrace()
+            null
         }
     }
 

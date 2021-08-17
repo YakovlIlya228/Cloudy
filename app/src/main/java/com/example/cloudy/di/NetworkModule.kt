@@ -41,7 +41,7 @@ val networkModule = module {
 
     single<ApiRepository> { ApiRepositoryImp(get()) }
 
-    single<OkHttpClient> {
+    single {
         OkHttpClient.Builder()
             .addInterceptor(OkHttpLogoInterceptor())
             .addInterceptor(get<HttpLoggingInterceptor>())

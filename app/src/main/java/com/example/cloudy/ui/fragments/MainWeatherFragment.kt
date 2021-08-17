@@ -30,9 +30,17 @@ class MainWeatherFragment : Fragment() {
             listOf(
                 Location(
                     cityName = "Moscow",
+                    countryCode = "ru",
+                    temp = "17.4",
+                    weather = Weather(801, "Few clouds", "c02n")
+                ),
+                Location(
+                    cityName = "Berlin",
+                    countryCode = "de",
                     temp = "17.4",
                     weather = Weather(801, "Few clouds", "c02n")
                 )
+
             )
         )
     }

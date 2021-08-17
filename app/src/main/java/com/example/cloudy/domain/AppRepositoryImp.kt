@@ -1,4 +1,4 @@
-package com.example.cloudy.domain.usecase
+package com.example.cloudy.domain
 
 import com.example.cloudy.source.api.ApiRepository
 import com.example.cloudy.source.api.model.Forecast
@@ -13,6 +13,6 @@ class AppRepositoryImp(
     }
 
     override suspend fun getDailyForecast(city: String, countryCode: String): Array<Forecast> {
-        return apiRepository.getDailyForecast(city, countryCode)
+        return apiRepository.getDailyForecast(city, countryCode).data
     }
 }
