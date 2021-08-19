@@ -6,7 +6,7 @@ import com.example.cloudy.source.api.model.Location
 
 interface ApiRepository {
 
-    suspend fun getCurrentWeather(city: String, countryCode: String): Array<Location>
+    suspend fun getCurrentWeather(city: String, countryCode: String): ApiModel<Array<Location>>
 
     suspend fun getDailyForecast(city: String, countryCode: String): ApiModel<Array<Forecast>>
 

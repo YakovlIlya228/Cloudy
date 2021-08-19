@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 
 data class Location(
     @SerializedName("app_temp")
-    val appTemp: Int = 0,
+    val appTemp: Double = 0.0,
     @SerializedName("aqi")
     val aqi: Int = 0,
     @SerializedName("city_name")
@@ -17,17 +17,17 @@ data class Location(
     @SerializedName("datetime")
     val datetime: String = "",
     @SerializedName("dewpt")
-    val dewpt: Int = 0,
+    val dewpt: Double = 0.0,
     @SerializedName("dhi")
-    val dhi: Int = 0,
+    val dhi: Double = 0.0,
     @SerializedName("dni")
-    val dni: Int = 0,
+    val dni: Double = 0.0,
     @SerializedName("elev_angle")
     val elevAngle: Double = 0.0,
     @SerializedName("ghi")
-    val ghi: Int = 0,
+    val ghi: Double = 0.0,
     @SerializedName("h_angle")
-    val hAngle: Int = 0,
+    val hAngle: Double = 0.0,
     @SerializedName("lat")
     val lat: Double = 0.0,
     @SerializedName("lon")
@@ -41,13 +41,13 @@ data class Location(
     @SerializedName("pres")
     val pres: Double = 0.0,
     @SerializedName("rh")
-    val rh: Int = 0,
+    val rh: Double = 0.0,
     @SerializedName("slp")
-    val slp: Int = 0,
+    val slp: Double = 0.0,
     @SerializedName("snow")
     val snow: Int = 0,
     @SerializedName("solar_rad")
-    val solarRad: Int = 0,
+    val solarRad: Double = 0.0,
     @SerializedName("state_code")
     val stateCode: String = "",
     @SerializedName("station")
@@ -63,7 +63,7 @@ data class Location(
     @SerializedName("ts")
     val ts: Int = 0,
     @SerializedName("uv")
-    val uv: Int = 0,
+    val uv: Double = 0.0,
     @SerializedName("vis")
     val vis: Int = 0,
     @SerializedName("weather")
@@ -75,5 +75,5 @@ data class Location(
     @SerializedName("wind_dir")
     val windDir: Int = 0,
     @SerializedName("wind_spd")
-    val windSpd: Int = 0
+    val windSpd: Double = 0.0
 )

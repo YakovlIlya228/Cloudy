@@ -12,8 +12,10 @@ import com.example.cloudy.R
 import com.example.cloudy.source.api.model.Location
 import com.example.cloudy.ui.adapters.DailyForecastAdapter
 import com.example.cloudy.ui.adapters.diff_utils.ForecastDiffUtilCallback
+import com.example.cloudy.ui.utils.Extensions.gone
 import com.example.cloudy.ui.viewmodels.LocationWeatherViewModel
 import com.example.cloudy.utils.Extensions.parseIcon
+import kotlinx.android.synthetic.main.current_weather_main_info.*
 import kotlinx.android.synthetic.main.fragment_location_weather_nested.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -30,10 +32,18 @@ class NestedLocationWeatherFragment(private val location: Location) : Fragment()
         return inflater.inflate(R.layout.fragment_location_weather_nested, container, false)
     }
 
+    override fun onResume() {
+        super.onResume()
+        shimmerLayout.startShimmer()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        shimmerLayout.stopShimmer()
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        location.bindLocation()
         with(dailyWeatherRv) {
             layoutManager =
                 LinearLayoutManager(requireContext(), RecyclerView.HORIZONTAL, false)
@@ -45,7 +55,9 @@ class NestedLocationWeatherFragment(private val location: Location) : Fragment()
                     ForecastDiffUtilCallback(dailyForecastAdapter.getItems(), it.toList())
                 dailyForecastAdapter.submitList(it.toList(), diffUtilCallback)
             }
-
+            currentLocationWeather.observe(viewLifecycleOwner) {
+                it.bindLocation()
+            }
             fetchDailyForecast(location.cityName, location.countryCode) {
                 Toast.makeText(
                     requireContext(),
@@ -53,6 +65,7 @@ class NestedLocationWeatherFragment(private val location: Location) : Fragment()
                     Toast.LENGTH_SHORT
                 ).show()
             }
+            fetchCurrentWeather(location.cityName, location.countryCode)
         }
 
     }
@@ -62,6 +75,8 @@ class NestedLocationWeatherFragment(private val location: Location) : Fragment()
         currentTemp.text = temp
         weatherDescription.text = weather.description
         weather.code.parseIcon()?.let { weatherIcon.setImageResource(it) }
+        shimmerLayout.hideShimmer()
+        shimmerLayout.gone()
     }
 
 }

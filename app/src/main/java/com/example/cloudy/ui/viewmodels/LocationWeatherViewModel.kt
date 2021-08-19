@@ -33,6 +33,9 @@ class LocationWeatherViewModel(
             onComplete {
                 currentLocationWeather.postValue(it)
             }
+            onError {
+                println(it)
+            }
         }
     }
 

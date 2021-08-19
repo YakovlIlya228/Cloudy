@@ -6,8 +6,11 @@ import com.example.cloudy.source.api.model.Location
 
 class ApiRepositoryImp(private val apiService: ApiService) : ApiRepository {
 
-    override suspend fun getCurrentWeather(city: String, countryCode: String): Array<Location> {
-        return apiService.getCurrentWeather(city, countryCode).data.toTypedArray()
+    override suspend fun getCurrentWeather(
+        city: String,
+        countryCode: String
+    ): ApiModel<Array<Location>> {
+        return apiService.getCurrentWeather(city, countryCode)
     }
 
     override suspend fun getDailyForecast(

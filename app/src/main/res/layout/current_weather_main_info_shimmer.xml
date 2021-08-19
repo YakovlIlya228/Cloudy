@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/currentLocationShimmer"
+        android:layout_width="160dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="32dp"
+        android:background="@color/shimmer_placeholder"
+        android:textColor="@android:color/white"
+        android:textSize="36sp"
+        app:fontFamily="@font/montserrat_medium"
+        app:layout_constraintEnd_toEndOf="@+id/currentTempShimmer"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="@+id/weatherIconShimmer"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Moscow" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/currentTempShimmer"
+        android:layout_width="92dp"
+        android:layout_height="78dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="32dp"
+        android:background="@color/shimmer_placeholder"
+        android:textColor="@android:color/white"
+        android:textSize="56sp"
+        app:fontFamily="@font/montserrat_medium"
+        app:layout_constraintBottom_toBottomOf="@id/weatherIconShimmer"
+        app:layout_constraintStart_toEndOf="@id/weatherIconShimmer"
+        app:layout_constraintTop_toTopOf="@+id/weatherIconShimmer"
+        tools:text="+16" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/weatherDescriptionShimmer"
+        android:layout_width="115dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/shimmer_placeholder"
+        android:letterSpacing="-0.02"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:fontFamily="@font/montserrat_medium"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/weatherIconShimmer"
+        app:layout_constraintTop_toBottomOf="@id/weatherIconShimmer"
+        tools:text="Few clouds" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/weatherIconShimmer"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="24dp"
+        android:background="@color/shimmer_placeholder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/currentLocationShimmer"
+        tools:src="@drawable/ic_s" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

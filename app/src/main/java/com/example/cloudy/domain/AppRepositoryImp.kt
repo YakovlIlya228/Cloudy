@@ -9,7 +9,7 @@ class AppRepositoryImp(
 ) : AppRepository {
 
     override suspend fun getCurrentWeather(city: String, countryCode: String): Array<Location> {
-        return apiRepository.getCurrentWeather(city, countryCode)
+        return apiRepository.getCurrentWeather(city, countryCode).data
     }
 
     override suspend fun getDailyForecast(city: String, countryCode: String): Array<Forecast> {

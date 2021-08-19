@@ -3,7 +3,7 @@ package com.example.cloudy.source.api
 import com.example.cloudy.BuildConfig
 import com.example.cloudy.source.api.model.ApiModel
 import com.example.cloudy.source.api.model.Forecast
-import com.example.cloudy.source.api.model.LocationCount
+import com.example.cloudy.source.api.model.Location
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -26,6 +26,6 @@ interface ApiService {
         @Query("city") city: String,
         @Query("country") countryCode: String,
         @Query("key") apiKey: String = key
-    ): LocationCount
+    ): ApiModel<Array<Location>>
 
 }
