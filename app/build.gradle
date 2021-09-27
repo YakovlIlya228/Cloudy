@@ -23,6 +23,7 @@ android {
         }
         all {
             buildConfigField "String", "BASE_URL", "\"$BASE_URL\""
+            buildConfigField "String", "BASE_COUNTRY_URL", "\"$BASE_COUNTRY_URL\""
             buildConfigField "String", "API_KEY", "\"$API_KEY\""
         }
     }

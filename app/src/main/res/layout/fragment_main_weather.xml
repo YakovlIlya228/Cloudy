@@ -15,5 +15,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addCity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:backgroundTint="@color/sky_blue"
+        app:elevation="4dp"
+        app:fabSize="normal"
+        app:layout_constraintBottom_toBottomOf="@+id/current_weather_pager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_add_white" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,7 @@
 package com.example.cloudy.source.api
 
 import com.example.cloudy.source.api.model.ApiModel
+import com.example.cloudy.source.api.model.Country
 import com.example.cloudy.source.api.model.Forecast
 import com.example.cloudy.source.api.model.Location
 
@@ -18,5 +19,10 @@ class ApiRepositoryImp(private val apiService: ApiService) : ApiRepository {
         countryCode: String
     ): ApiModel<Array<Forecast>> {
         return apiService.getDailyForecast(city, countryCode)
+    }
+
+
+    override suspend fun getAllCountries(): ApiModel<Array<Country>> {
+        return apiService.getAllCountries()
     }
 }
