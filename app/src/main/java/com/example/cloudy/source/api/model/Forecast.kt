@@ -23,11 +23,11 @@ data class Forecast(
     @SerializedName("wind_gust_spd")
     val windGustSpd: Double,
     @SerializedName("snow_depth")
-    val snowDepth: Int,
+    val snowDepth: Double,
     @SerializedName("clouds")
     val clouds: Int,
     @SerializedName("ts")
-    val ts: Int,
+    val ts: Long,
     @SerializedName("sunrise_ts")
     val sunriseTs: Int,
     @SerializedName("app_min_temp")
@@ -51,7 +51,7 @@ data class Forecast(
     @SerializedName("dewpt")
     val dewpt: Double,
     @SerializedName("snow")
-    val snow: Int,
+    val snow: Double,
     @SerializedName("uv")
     val uv: Double,
     @SerializedName("weather")

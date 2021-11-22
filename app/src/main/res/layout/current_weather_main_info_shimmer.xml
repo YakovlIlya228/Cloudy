@@ -63,4 +63,31 @@
         app:layout_constraintTop_toBottomOf="@id/currentLocationShimmer"
         tools:src="@drawable/ic_s" />
 
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/feelsLikeTempShimmer"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shimmer_placeholder"
+        android:paddingHorizontal="8dp"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/weatherIconShimmer"
+        app:layout_constraintStart_toStartOf="@+id/currentTempShimmer"
+        tools:text="Feels like +19.5" />
+
+
+    <!--    <com.google.android.material.textview.MaterialTextView-->
+    <!--        android:id="@+id/dailyMinTempShimmer"-->
+    <!--        android:layout_width="65dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:textColor="@android:color/white"-->
+    <!--        android:textSize="18sp"-->
+    <!--        android:paddingHorizontal="8dp"-->
+    <!--        android:background="@drawable/shimmer_placeholder"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@+id/weatherIconShimmer"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toEndOf="@id/dailyMaxTempShimmer"-->
+    <!--        tools:text="+14.2" />-->
+
 </androidx.constraintlayout.widget.ConstraintLayout>

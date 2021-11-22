@@ -74,6 +74,7 @@ class NestedLocationWeatherFragment(private val location: Location) : Fragment()
         currentLocation.text = cityName
         currentTemp.text = temp
         weatherDescription.text = weather.description
+        feelsLikeTemp.text = getString(R.string.feels_like, appTemp)
         weather.code.parseIcon()?.let { weatherIcon.setImageResource(it) }
         shimmerLayout.hideShimmer()
         shimmerLayout.gone()

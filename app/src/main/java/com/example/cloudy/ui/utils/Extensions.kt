@@ -15,4 +15,17 @@ object Extensions {
     fun View.invisible() {
         visibility = View.INVISIBLE
     }
+
+
+    fun gone(vararg views: View) {
+        views.forEach {
+            it.gone()
+        }
+    }
+
+    fun visible(vararg views: View) {
+        views.forEach {
+            it.visible()
+        }
+    }
 }

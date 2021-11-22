@@ -37,7 +37,7 @@ data class Location(
     @SerializedName("pod")
     val pod: String = "",
     @SerializedName("precip")
-    val precip: Int = 0,
+    val precip: Double = 0.0,
     @SerializedName("pres")
     val pres: Double = 0.0,
     @SerializedName("rh")
@@ -45,7 +45,7 @@ data class Location(
     @SerializedName("slp")
     val slp: Double = 0.0,
     @SerializedName("snow")
-    val snow: Int = 0,
+    val snow: Double = 0.0,
     @SerializedName("solar_rad")
     val solarRad: Double = 0.0,
     @SerializedName("state_code")
@@ -65,7 +65,7 @@ data class Location(
     @SerializedName("uv")
     val uv: Double = 0.0,
     @SerializedName("vis")
-    val vis: Int = 0,
+    val vis: Double = 0.0,
     @SerializedName("weather")
     val weather: Weather,
     @SerializedName("wind_cdir")

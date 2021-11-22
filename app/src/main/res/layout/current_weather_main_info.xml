@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:background="@color/grey_blue_2"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -58,5 +59,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/currentLocation"
         tools:src="@drawable/ic_s" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/feelsLikeTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/weatherIcon"
+        app:layout_constraintStart_toStartOf="@+id/currentTemp"
+        tools:text="Feels like +19.5" />
+
+
+    <!--    <com.google.android.material.textview.MaterialTextView-->
+    <!--        android:id="@+id/dailyMinTemp"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:textColor="@android:color/white"-->
+    <!--        android:textSize="18sp"-->
+    <!--        android:visibility="gone"-->
+    <!--        app:drawableStartCompat="@drawable/ic_arrow_down"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@+id/weatherIcon"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toEndOf="@id/dailyMaxTemp"-->
+    <!--        tools:text="+14.2" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
